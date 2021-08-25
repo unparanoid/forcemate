@@ -1,5 +1,9 @@
 *.swp
 
+/.bashrc
+/.bash_history
+/.cache
+/.yarnrc
 /node_modules/
 /yarn-error.log
 
