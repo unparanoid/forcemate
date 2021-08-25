@@ -1,3 +1,5 @@
+@import 'common.scss';
+
 $menu-height   : 1.2rem;
 $toolbar-height: 2.8rem;
 
@@ -10,7 +12,7 @@ $toolbar-height: 2.8rem;
   text-align : center;
 
   &:hover {
-    background-color: white;
+    background-color: $color4;
   }
 
   cursor: default;
@@ -20,15 +22,24 @@ $toolbar-height: 2.8rem;
   display: flex;
   height : $menu-height;
 
-  background-color: gray;
+  background-color: lighten($color3, 10%);
 }
 
 .Toolbar {
   height: $toolbar-height;
 
-  background-color: darkgray;
+  background-color: $color2;
+
+  h1 {
+    padding: 0 1rem;
+
+    font-size  : $toolbar-height * .8;
+    line-height: $toolbar-height;
+  }
 }
 
 .Header {
   height: $menu-height + $toolbar-height;
+
+  color: $color1;
 }

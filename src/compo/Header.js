@@ -33,6 +33,7 @@ class Toolbar extends React.Component {
   render() {
     return (
       <div className={styles.Toolbar}>
+        <div><h1>FORCEMATE</h1></div>
       </div>
     );
   }

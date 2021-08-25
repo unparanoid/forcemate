@@ -1,0 +1,32 @@
+@import 'common.scss';
+
+$bg-color    : $color3;
+$border-color: lighten($color3, 20%);
+
+
+.Main {
+  flex-grow: 1;
+
+  background-color: $bg-color;
+}
+
+.Editor {
+  width : 100% !important;
+  height: 100% !important;
+
+  :global .rete-background {
+    /* grid background */
+    background-size: 10rem 10rem;
+    background-image:
+      linear-gradient(to right, $border-color 1px, transparent 1px),
+      linear-gradient(to bottom, $border-color 1px, transparent 1px);
+  }
+  :global .node {
+    background-color: lighten($bg-color, 10%);
+    border-color    : lighten($border-color, 10%);
+  }
+  :global .node.selected {
+    background-color: lighten($bg-color, 30%);
+    border-color    : $color4;
+  }
+}
