@@ -8,11 +8,11 @@ $border-color: lighten($color3, 20%);
   flex-grow: 1;
 
   background-color: $bg-color;
-}
 
-.Editor {
-  width : 100% !important;
-  height: 100% !important;
+  & > div {
+    width : 100% !important;
+    height: 100% !important;
+  }
 
   :global .rete-background {
     /* grid background */
@@ -24,9 +24,43 @@ $border-color: lighten($color3, 20%);
   :global .node {
     background-color: lighten($bg-color, 10%);
     border-color    : lighten($border-color, 10%);
+
+    &.selected {
+      background-color: lighten($bg-color, 30%);
+      border-color    : $color4;
+    }
+
+    .input-title, .output-title {
+      margin: 0 .5rem;
+    }
+    .input .socket {
+      margin-top: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+    .output .socket {
+      margin-top: 0;
+      margin-left: 0;
+      margin-bottom: 0;
+    }
+
+    .control {
+      margin: -.4rem auto 0 auto;
+      padding: .2rem .4rem;
+
+      width: 90%;
+
+      input {
+        width: 100%;
+        background-color: $color3;
+        color: $color1;
+        line-height: 1.4rem;
+        text-align: right;
+      }
+    }
   }
-  :global .node.selected {
-    background-color: lighten($bg-color, 30%);
-    border-color    : $color4;
+
+  :global .node.imm-scalar {
+    width: 6rem;
   }
 }

@@ -9,14 +9,12 @@ import Main   from './Main.js';
 import styles from './Root.scss';
 
 
-export default class Root extends React.Component {
-  render() {
-    return (
-      <div className={styles.Root}>
-        <Header/>
-        <Main/>
-        <Footer/>
-      </div>
-    );
-  }
+export default function Root(props) {
+  return (
+    <div className={styles.Root}>
+      <Header/>
+      <Main editor={props.editor}/>
+      <Footer/>
+    </div>
+  );
 }
