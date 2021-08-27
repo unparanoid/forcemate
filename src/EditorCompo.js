@@ -3,8 +3,6 @@
 import '@babel/polyfill';
 import Rete from 'rete';
 
-import * as EditorControl from './EditorControl.js';
-
 
 export class Imm extends Rete.Component {
   constructor(sock) {
@@ -12,9 +10,7 @@ export class Imm extends Rete.Component {
     this.sock = sock;
   }
   builder(node) {
-    node.addOutput(new Rete.Output('value', 'value', this.sock));
-    node.addControl(
-      new EditorControl.Integer(this.editor, 'value', node));
+    this.sock.AddOutput(node, 'value');
   }
   worker(node, inputs, outputs) {
   }
@@ -26,7 +22,7 @@ export class Input extends Rete.Component {
     this.sock = sock;
   }
   builder(node) {
-    node.addOutput(new Rete.Output('value', '', this.sock));
+    this.sock.AddOutput(node, 'value');
   }
   worker(node, inputs, outputs) {
   }

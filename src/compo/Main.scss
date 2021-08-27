@@ -30,6 +30,11 @@ $border-color: lighten($color3, 20%);
       border-color    : $color4;
     }
 
+    .title {
+      padding: .4rem;
+      font-size: 1rem;
+      text-align: center;
+    }
     .input-title, .output-title {
       margin: 0 .5rem;
     }
@@ -48,19 +53,33 @@ $border-color: lighten($color3, 20%);
       margin: -.4rem auto 0 auto;
       padding: .2rem .4rem;
 
-      width: 90%;
+      width: 95%;
 
       input {
-        width: 100%;
+        width  : 100%;
+        padding: 0 .2rem;
+
+        color           : $color1;
         background-color: $color3;
-        color: $color1;
+
         line-height: 1.4rem;
-        text-align: right;
+        text-align : right;
+
+        &[type='number'] {
+          -moz-appearance: textfield;
+
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
       }
     }
   }
 
-  :global .node.imm-scalar {
-    width: 6rem;
+  :global .node.imm-integer, :global .node.input-integer {
+    width    : 8rem;
+    min-width: 8rem;
   }
 }
